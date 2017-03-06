@@ -1,0 +1,215 @@
+@import 'defaults';
+
+html {
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+}
+
+.row {
+	width: 100%;
+	max-width: 739px;
+	margin: 0 auto;
+}
+
+.row:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+.column {
+	float: left;
+	box-sizing: border-box;
+}
+
+
+body {
+	padding-right: 0.2rem;
+}
+
+/************** Navigation **************/
+
+nav {
+	padding-right: 0 !important;
+	margin: 0;
+	bottom: 0px;
+}
+
+ul.navmain {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	padding-right: 0;
+}
+ul.navmain button {
+	border: none;
+	float: left;
+	list-style-type: none;
+	display: block;
+	color: white;
+	background-color: white;
+	padding: 5px 0;
+	text-decoration: none;
+	font-size: 12px;
+	background-color: #1b1b1b
+}
+
+ul.navmain button.current {
+	background-color: $primary-background;
+	color: black;
+}
+
+
+
+/******** Responsive Media Queries ********/
+
+[class*="small-"] {
+	width: 100%;
+}
+
+@media only screen and (min-width: 0px) {
+	.small-1 {
+		width: 8.333%;
+	}
+	.small-2 {
+		width: 16.666%;
+	}
+	.small-3 {
+		width: 25%;
+	}
+	.small-4 {
+		width: 33.333%;
+	}
+	.small-5 {
+		width: 41.666%;
+	}
+	.small-5-5 {
+		width: 49.555%;
+	}
+	.small-6 {
+		width: 50%;
+	}
+	.small-7 {
+		width: 58.333%;
+	}
+	.small-8 {
+		width: 66.666%;
+	}
+	.small-8-left {
+		width: 66.666%;
+	}
+	.small-9 {
+		width: 75%;
+	}
+	.small-10 {
+		width: 83.333%;
+	}
+	.small-11 {
+		width: 91.666%;
+	}
+	.small-12 {
+		width: 100%;
+	}
+	.small-hidden {
+		display: none;
+	}
+	.right {
+		float: right;
+	}
+}
+
+//was 900px with medium
+@media only screen and (min-width: 738px) {
+	.large-1 {
+		width: 8.333%;
+	}
+	.large-2 {
+		width: 16.666%;
+	}
+	.large-3 {
+		width: 25%;
+	}
+	.large-4 {
+		width: 33.333%;
+	}
+	.large-5 {
+		width: 41.666%;
+	}
+	.large-5-5 {
+		width: 49.555%;
+	}
+	.large-6 {
+		width: 50%;
+	}
+	label.large-6-card {
+		width: 50%;
+		padding: 0.64rem 0;
+		margin: 0;
+		border: 0;
+		background-color: white;
+		text-align: left;
+		height: 100%;
+
+	}
+	select.large-6-card {
+		width: 50%;
+		border: 2px solid $primary-background !important;
+		border-radius: 4px !important;
+		margin: 0 0 0.2rem 0;
+	}
+	.large-7 {
+		width: 58.333%;
+	}
+	.large-8 {
+		width: 66.666%;
+	}
+	.large-8-left {
+		width: 66.666%;
+	}
+	.large-9 {
+		width: 75%;
+	}
+	.large-10 {
+		width: 83.333%;
+	}
+	.large-11 {
+		width: 91.666%;
+	}
+	.large-12 {
+		width: 100%;
+	}
+	label.large-12-card {
+		width: 100%;
+		padding: 0.64rem 0;
+		margin: 0;
+		border: 0;
+		background-color: white;
+		text-align: left;
+		height: 100%;
+
+	}
+	input.large-12-card {
+		width: 100%;
+		border: 2px solid $primary-background !important;
+		float: left;
+		margin: 0 0 0.4rem 0;
+		border-radius: 4px !important;
+	}
+	select.large-12-card {
+		width: 100%;
+		border: 2px solid $primary-background !important;
+		border-radius: 4px !important;
+		margin: 0 0 0.2rem 0;
+	}
+	.large-hidden {
+		display: none;
+	}
+	.small-hidden {
+		display: block;
+	}
+	.right {
+		float: right;
+	}	
+}
+
