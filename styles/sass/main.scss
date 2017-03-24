@@ -1,4 +1,10 @@
-@import 'defaults';
+$color-background: #F5F5F5;
+$color-main: #B91A1F;
+$color-active: #FFF;
+$color-link: #FFF;
+
+$button-height: 27px;
+$button-width: 35px;
 
 html {
 	font-family: Arial, Helvetica, sans-serif;
@@ -7,7 +13,6 @@ html {
 
 .row {
 	width: 100%;
-	max-width: 739px;
 	margin: 0 auto;
 }
 
@@ -18,48 +23,206 @@ html {
 }
 
 .column {
-	float: left;
+	float: right;
 	box-sizing: border-box;
 }
 
 
 body {
-	padding-right: 0.2rem;
+	margin-right: 0.2rem;
+	margin-left: 0;
+	background: $color-background;
 }
 
-/************** Navigation **************/
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  top: 40%;
+  left: 0;
+  margin:  0 auto;
 
-nav {
-	padding-right: 0 !important;
-	margin: 0;
-	bottom: 0px;
+  p {
+    font-size: 20px;
+  }
+  
+  a {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    color: $color-main;
+    text-decoration: none;
+    font-size: 20px;
+    overflow: hidden;
+    top: 5px;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      background: $color-main;
+      height: 2px;
+      width: 0%;
+      transform: translateX(-50%);
+      left: 50%;
+      bottom: 0;
+      transition: .35s ease;
+    }
+    &:hover:after,
+    &:focus:after,
+    &:active:after {
+      width: 100%;
+    }
+  }
 }
 
-ul.navmain {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	padding-right: 0;
-}
-ul.navmain button {
-	border: none;
-	float: left;
-	list-style-type: none;
-	display: block;
-	color: white;
-	background-color: white;
-	padding: 5px 0;
-	text-decoration: none;
-	font-size: 12px;
-	background-color: #1b1b1b
+.overlay {
+  position: fixed;
+  background: $color-main;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .35s;
+  overflow: hidden;
+  
+  &.open {
+    opacity: .9;
+    visibility: visible;
+    height: 100%;
+    
+    li {
+      animation: fadeInRight .35s ease forwards;
+    }
+  }
+  nav {
+    position: relative;
+    height: 70%;
+    top: 50%;
+    transform: translateY(-55%);
+    font-size: 30px;
+    text-align: center;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: inline-block;
+    position: relative;
+    height: 100%; 
+    
+    li {
+      display: block;
+      height: 25%;
+      height: calc(100% / 4);
+      min-height: 50px;
+      position: relative;
+      opacity: 0;
+      
+      a {
+        display: block;
+        position: relative;
+        color: $color-link;
+        text-decoration: none;
+        overflow: hidden;
+        
+        &:hover:after,
+         &:focus:after,
+         &:active:after {
+           width: 100%;
+         }
+        
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          width: 0%;
+          transform: translateX(-50%);
+          height: 3px;
+          background: $color-link;
+          transition: .35s;
+        }
+      }
+    }
+  }
 }
 
-ul.navmain button.current {
-	background-color: $primary-background;
-	color: black;
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
 }
 
+// /************** Navigation **************/
+
+// // nav {
+// // 	padding-right: 0 !important;
+// // 	padding-left: 0;
+// // 	margin: 0;
+// // 	position: fixed;
+// // 	bottom: 0;
+// // 	z-index: 1000;
+// // }
+
+// // ul.navmain {
+// // 	list-style-type: none;
+// // 	margin: 0;
+// // 	padding: 0;
+// // 	overflow: hidden;
+// // }
+// // ul.navmain button {
+// // 	border: none;
+// // 	list-style-type: none;
+// // 	display: inline-block;
+// // 	color: white;
+// // 	background-color: white;
+// // 	padding: 15px 0;
+// // 	text-decoration: none;
+// // 	font-size: 12px;
+// // 	background-color: #1b1b1b;
+// // 	padding-right: 0;
+// // 	text-align: center;
+// // }
+
+// // ul.navmain button.current {
+// // 	background-color: $primary-background;
+// // 	color: black;
+// // }
+
+header {
+	position: fixed;
+	bottom: 0;
+	z-index: 999;
+}
+
+button {
+    float: left;
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-align: center;
+    background-color: #333;
+    border: none;
+    cursor: pointer;
+}
+
+button:focus {
+	outline: 0;
+}
+
+.active {
+	background-color: #B91A1F;
+}
 
 
 /******** Responsive Media Queries ********/
@@ -154,7 +317,7 @@ ul.navmain button.current {
 	}
 	select.large-6-card {
 		width: 50%;
-		border: 2px solid $primary-background !important;
+		border: 2px solid !important;
 		border-radius: 4px !important;
 		margin: 0 0 0.2rem 0;
 	}
@@ -191,14 +354,14 @@ ul.navmain button.current {
 	}
 	input.large-12-card {
 		width: 100%;
-		border: 2px solid $primary-background !important;
+		border: 2px solid !important;
 		float: left;
 		margin: 0 0 0.4rem 0;
 		border-radius: 4px !important;
 	}
 	select.large-12-card {
 		width: 100%;
-		border: 2px solid $primary-background !important;
+		border: 2px solid !important;
 		border-radius: 4px !important;
 		margin: 0 0 0.2rem 0;
 	}
