@@ -312,6 +312,19 @@ button:focus {
   }
 }
 
+main {
+	max-width: 900px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+main h2 {
+	// background-color: $main-red;
+	// margin: 0;
+	// margin-left: 16px;
+	// color: #fff;
+	// padding: .5em 0;
+}
 
 /******** Product Image ********/
 
@@ -333,11 +346,23 @@ button:focus {
 }
 
 img {
-	max-height: auto;
 	max-width: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	min-width: 45px; 
+	min-width: 45px;
+	overflow: hidden; 
+}
+
+.img-product button {
+	border: none;
+	background-color: #fff;
+	color: $main-red;
+	cursor: pointer;
+	font-size: 15px;
+}
+
+.img-product button span {
+	padding-right: .5em
 }
 
 
@@ -347,7 +372,7 @@ img {
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 2; /* Sit on top */
+    z-index: 100; /* Sit on top */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -361,7 +386,7 @@ img {
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 10% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
@@ -369,15 +394,15 @@ img {
 
 /* The Close Button */
 .close {
-    color: #aaa;
+    color: $main-red;
     float: right;
-    font-size: 28px;
+    font-size: 30px;
     font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: #e24d53;
     text-decoration: none;
     cursor: pointer;
 }
@@ -513,6 +538,7 @@ button.accordion {
     border: none;
     outline: none;
     transition: 0.4s;
+    font-size: 12px
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
@@ -674,6 +700,7 @@ table {
 	}
 	.large-12 {
 		width: 100%;
+		display: block;
 	}
 	.large-panel {
 		font-size: 13px;
@@ -681,16 +708,29 @@ table {
 	.large-hidden {
 		display: none;
 	}
-	button.accordion {
+	button.accordion, button.accordion:after, button.accordion.active:after  {
     	font-size: 13px
 	}
-	.product-description {
-		// max-height: 100%;
-  //   overflow: hidden;
-  //   transition: max-height .4s ease-out;
-	}	
-	.right {
-		float: right;
-	}	
+	.img-container {
+		height: 366.219px;
+	}
+	.img-single {
+		height: 100%;
+		margin-right: 0;
+	}
+
+	.img-product {
+		height: 90.6%;
+		border-right: 0;
+	}
+	.img-product img {
+		padding-top: 10px;
+	}
+	.in-info {
+		margin-left: 0;
+	}
+	.within-info {
+		border-left: 0;
+	}
 }
 

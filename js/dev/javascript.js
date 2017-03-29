@@ -61,3 +61,20 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+
+/******** Price Change ********/
+// http://stackoverflow.com/questions/19382847/change-price-using-select-option-text
+
+var changePrice = function()
+{
+    var select = $(".weight-select"),
+        displayPrice = $(".product-price");
+
+    select.change(function(){
+        var selected = $(this).children("option:selected").val();
+        displayPrice.text(selected);
+    });
+}
+
+changePrice();
