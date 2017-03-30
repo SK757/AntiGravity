@@ -68,13 +68,16 @@ window.onclick = function(event) {
 
 var changePrice = function()
 {
-    var select = $(".weight-select"),
+    var weightSelect = $(".weight-select"),
+    	quantitySelect = $(".quantity-select"),
         displayPrice = $(".product-price");
 
-    select.change(function(){
+    quantitySelect.change(function(){
         var selected = $(this).children("option:selected").val();
         displayPrice.text(selected);
     });
+
+
 }
 
 changePrice();

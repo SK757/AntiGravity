@@ -1,4 +1,4 @@
-$color-background: #F5F5F5;
+$color-background: #F8F8F8;
 $color-main: #B91A1F;
 $color-active: #FFF;
 $color-link: #FFF;
@@ -312,18 +312,10 @@ button:focus {
   }
 }
 
-main {
+main, footer {
 	max-width: 900px;
 	width: 100%;
 	margin: 0 auto;
-}
-
-main h2 {
-	// background-color: $main-red;
-	// margin: 0;
-	// margin-left: 16px;
-	// color: #fff;
-	// padding: .5em 0;
 }
 
 /******** Product Image ********/
@@ -343,6 +335,10 @@ main h2 {
 	overflow: hidden;
 	background-color: #FFF;
 	text-align: center;
+}
+
+.img-product h3 {
+	margin: 0 0 .2em;
 }
 
 img {
@@ -410,11 +406,11 @@ img {
 /******** Article ********/
 
 
-section.info {
+.info {
 	margin-bottom: .5em;
 }
 
-.in {
+.in, .in-footer {
 	margin: 0 1em;
 	overflow: hidden;
 }
@@ -458,12 +454,21 @@ Chris Coyier
 .rating-full > span:before {
    	content: "\2605";
    	position: absolute;
-   	color: #ffcc00;
+   	color: #f7b022;
   	z-index: 1;
 }
 
 
 /******** Form ********/
+
+label {
+	padding: 1em;
+	text-align: left;
+}
+
+label span {
+	color: $main-red;
+}
 
 select {
 	-webkit-appearance: none;
@@ -599,6 +604,45 @@ table {
 }
 
 
+/******** Recommended Producs ********/
+
+.recommended .rec {
+	padding: 0 .5em;
+}
+
+.recommended h3 {
+	margin: 0 0 .5em;
+}
+
+.recommended p {
+	margin: 0 .4em .4em .4em;
+}
+
+.recommended input[type=submit] {
+	margin: 0;
+}
+
+p.recPrice{
+	margin-top: 1em;
+}
+
+
+/******** Footer ********/
+
+.in-footer {
+	background-color: $main-red;
+	color: #fff;
+	padding: 1em;
+	border: 1px solid #dcdcdc;
+}
+.in-footer p {
+	margin: .5em 0;
+}
+.in-footer a {
+	color: #fff;
+}
+
+
 
 /******** Responsive Media Queries ********/
 
@@ -667,9 +711,11 @@ table {
 	}
 	.large-3 {
 		width: 25%;
+		display: block;
 	}
 	.large-4 {
 		width: 33.333%;
+		display: block;
 	}
 	.large-5 {
 		width: 41.666%;
@@ -697,19 +743,23 @@ table {
 	}
 	.large-11 {
 		width: 91.666%;
+		display: block;
 	}
 	.large-12 {
 		width: 100%;
 		display: block;
 	}
 	.large-panel {
-		font-size: 13px;
+		font-size: .9rem;
+	}
+	.large-panel h4 {
+		font-size: 1rem;
 	}
 	.large-hidden {
 		display: none;
 	}
 	button.accordion, button.accordion:after, button.accordion.active:after  {
-    	font-size: 13px
+    	font-size: .9rem;
 	}
 	.img-container {
 		height: 366.219px;
@@ -718,13 +768,12 @@ table {
 		height: 100%;
 		margin-right: 0;
 	}
-
 	.img-product {
 		height: 90.6%;
 		border-right: 0;
 	}
 	.img-product img {
-		padding-top: 10px;
+		padding-top: 30px;
 	}
 	.in-info {
 		margin-left: 0;
