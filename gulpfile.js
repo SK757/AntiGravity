@@ -14,6 +14,7 @@ var gulp = require('gulp'),
 gulp.task('html', function() {
 	return gulp.src('index.html')
     .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(htmlmin({removeComments: true}))
     .pipe(gulp.dest('html'))
 	.pipe(connect.reload());
 });

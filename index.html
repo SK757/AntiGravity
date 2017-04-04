@@ -1,21 +1,25 @@
 <!DOCTYPE html>
-<html lang="fi-FI">
+<html lang="fi-FI"> <!-- set page language as Finnish -->
 <head>
 	<title>AntiGravity</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<link rel="stylesheet" style="text/css" href="styles/css/main.css?v=4.3">
-	<link href='//fonts.googleapis.com/css?family=Doppio One' rel='stylesheet'>
-	<link rel="icon" type="image/png" href="images/favicon.png">
+	<meta charset="utf-8"> <!-- Specify character encoding as utf-8 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- detect viewport -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> <!-- import JQuery library -->
+	<link rel="stylesheet" style="text/css" href="styles/css/main.css?v=4.3"> <!-- import stylesheet -->
+	<link href='//fonts.googleapis.com/css?family=Doppio One' rel='stylesheet'> <!-- Import Google font -->
+	<link rel="icon" type="image/png" href="images/favicon.png"> <!-- add favicon -->
 </head>
-<body>
-	<header class="row">
+<body> <!-- Start body  -->
+	<header class="row"> <!-- create a header on a new row -->
 		<h1 class="column small- large-12"><i>AntiGravity</i></h1>
 	</header>
 
-	<nav class="row">
+	<nav class="row"> <!-- create a navigation on a new row -->
 		<div class="panel-nav">
+			<!--  					   -->
+			<!-- EACH BUTTON IS 25% OF -->
+			<!-- THE SCREEN WIDTH WIDE -->
+			<!--  					   -->
 			<button class="column small-3 large-3" id="toggle1">Valikoima</button>
 			<button class="column small-3 large-3">Tavoitteesi</button>
 			<button class="column small-3 large-3" id="toggle2">Lajisi</button>
@@ -23,6 +27,9 @@
 		</div>
 	</nav>
 
+	<!--  					-->
+	<!-- NAVIGATION OVERLAY -->
+	<!--  					-->
 	<div class="overlay" id="overlay">
 	  <section class="overlay-menu">
 	    <ul>
@@ -34,6 +41,9 @@
 	  </section>
 	</div>
 
+	<!--  						  -->
+	<!-- NAVIGATION SPORT OVERLAY -->
+	<!--  						  -->
 	<div class="overlay" id="sport-overlay">
 	  <section class="overlay-menu">
 	    <ul>
@@ -47,19 +57,27 @@
 	  </section>
 	</div>
 
-	<main>
-		<article class="row">
-
-			<section class="column small- large-6 img-container">
-				<div class="img-single">
-					<div class="img-product">
+	<!--  			  -->
+	<!-- MAIN CONTENT -->
+	<!--  		 	  -->
+	<main> 
+		<article class="row"> <!-- New article on new row -->
+			<!--  			   -->
+			<!-- PRODUCT IMAGE -->
+			<!--  		 	   -->
+			<section class="column small- large-6 img-container"> <!-- container holds peice of content -->
+				<div class="img-single"> <!-- Holds margin and border -->
+					<div class="img-product"> <!-- Holds content -->
 						<h3>Myprotein Impact Whey Isolate heraproteiini</h3>
+						<!-- IMAGE WITH MODAL TO ENLARG -->
 						<img src="images/protein.jpg" alt="Myprotein Pouch" height="204" width="250"><button class="row column small-hidden large-12" id="modalBtn"><span>&#x1F50D;</span>Klikkaa Suuremmaksi Kuva</button>
 					</div>
 				</div>
 			</section>
 
-			<!-- The Modal -->
+			<!--  		   -->
+			<!-- THE MODAL -->
+			<!--  		   -->
 			<div id="myModal" class="modal">
 			  	<!-- Modal content -->
 				<div class="modal-content">
@@ -68,10 +86,14 @@
 			  	</div>
 			</div>
 
+			<!--  			  			  -->
+			<!-- PRODUCT PRICE AND RATING -->
+			<!--  	   (Mobile only)	  -->
 			<section class="column small- large-hidden info">
-				<div class="in">
-					<div class="within price">
+				<div class="in"> <!-- in holds peice of content -->
+					<div class="within price"> <!-- Holds margin and border and content-->
 						<h3 class="product-price"><b>39,99 €</b></h3>
+						<!-- Rating system -->
 						<div class="rating">
 							<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
 						</div>
@@ -79,14 +101,22 @@
 					</div>
 				</div>
 			</section>
-
+			<!--  			   		   -->
+			<!-- PRODUCT Customisation -->
+			<!--  		 	   		   -->
 			<section class="column small- large-6 info info-form">
-				<div class="in in-info">
-					<div class="within within-info">
-						<form>
+				<div class="in in-info"> <!-- in holds peice of content -->
+					<div class="within within-info"> <!-- Holds margin and border and content-->
+						<form> <!-- Product form -->
+							<!--  				   -->
+							<!-- FLAVOUR SELECTION -->
+							<!--  				   -->
 							<div class="row" id="selectFlavour">
-								<label for="flavour" class="column small-hidden large-4">Maku <span>&#42;</span></label>
+								<label for="flavour" class="column small-hidden large-4">Maku <span>&#42;</span></label> <!-- desktop label for flavour select -->
 								<select class="column large-8 small-" name="flavour" id="flavour" aria-required="true" required>
+									<!--      REQUIRED	   -->
+									<!-- FLAVOUR SELECTION -->
+									<!--  	  OPTIONS      -->
 									<option value="" id="dis" disabled selected>Valitse Maku</option>
 									<option value="maustamaton">Maustamaton</option>
 									<option value="banaani">Banaani</option>
@@ -97,25 +127,43 @@
 								</select>
 							</div>
 
+							<!--  				   -->
+							<!-- PACKAGE SELECTION -->
+							<!--  				   -->
 							<div class="row" id="selectContainer">
-								<label for="container" class="column small-hidden large-4">Pakkaus <span>&#42;</span></label>
+								<label for="container" class="column small-hidden large-4">Pakkaus <span>&#42;</span></label> <!-- desktop label for packaging select -->
 								<select class="column large-8 small-" name="container" id="container" aria-required="true" required>
+									<!--      REQUIRED	   -->
+									<!-- PACKAGE SELECTION -->
+									<!--  	  OPTIONS      -->
 									<option value="" id="dis" disabled selected>Valitse Pakkaus </option>
 									<option value="pussi">Pussi</option>
 								</select>
 							</div>
 
+							<!--  				-->
+							<!-- SIZE SELECTION -->
+							<!--  				-->
 							<div class="row" id="selectSize">
-								<label for="size" class="column small-hidden large-4">Koko <span>&#42;</span></label>
+								<label for="size" class="column small-hidden large-4">Koko <span>&#42;</span></label> <!-- desktop label for size select -->
 								<select class="column large-8 small- weight-select" name="size" id="size" aria-required="true" required>
+									<!--    REQUIRED    -->
+									<!-- SIZE SELECTION -->
+									<!--  	OPTIONS     -->
 									<option value="" id="dis" disabled>Valitse Koko</option>
 									<option value="1 kg" selected>1 kg</option>
 								</select>
 							</div>
 
+							<!--  				    -->
+							<!-- QUANTITY SELECTION -->
+							<!--  				    -->
 							<div class="row" id="selectAmount">
-								<label for="amount" class="column small-hidden large-4">Määrä <span>&#42;</span></label>
+								<label for="amount" class="column small-hidden large-4">Määrä <span>&#42;</span></label> <!-- desktop label for quantity select -->
 								<select class="column large-8 small- quantity-select" name="amount" id="amount" aria-required="true" required>
+									<!--      REQUIRED	    -->
+									<!-- QUANTITY SELECTION -->
+									<!--  	  OPTIONS       -->
 									<option style="color: red" value="" disabled selected>Valitse M&auml;&auml;r&auml;</option>
 									<option value="39,99 €">1</option>
 									<option value="79,98 €">2</option>
@@ -129,18 +177,20 @@
 									<option value="399,90 €">10</option>
 								</select>
 							</div>
-
+							<!-- Order Information -->
 							<div class="row">
-								<h3 class="column small- large-hidden product-price"><b>39,99 €</b></h3>
-								<input class="column small- large-12" type="submit" name="submit" value="Lis&auml;&auml; Ostoskoriin">
-								<button class="column small- large-12">Kirjoita Arvostelu</button>
+								<h3 class="column small- large-hidden product-price"><b>39,99 €</b></h3> <!-- changing price -->
+								<input class="column small- large-12" type="submit" name="submit" value="Lis&auml;&auml; Ostoskoriin">  <!-- form submit -->
+								<button class="column small- large-12">Kirjoita Arvostelu</button> 
 							</div>
 						</form>
 
 					</div>
 				</div>
 			</section>
-
+			<!--  			  			  -->
+			<!-- PRODUCT PRICE AND RATING -->
+			<!--  	   (Desktop only)	  -->
 			<section class="column small-hidden large-12 info">
 				<div class="in">
 					<div class="within">
@@ -152,11 +202,17 @@
 					</div>
 				</div>
 			</section>
+			<!--           	   	     -->
+			<!-- PRODUCT INFORMATION -->
+			<!--  	  		         -->
 			<section class="column small- large-12 info">
-				<div class="in">
-					<div class="within-accordion">
+				<div class="in">  <!-- container holds peice of content -->
+					<div class="within-accordion"> <!-- Holds accordion -->
+						<!--           	   	     -->
+						<!-- PRODUCT INFORMATION -->
+						<!--  	  		         -->
 						<button class="column small- large-12 accordion">Tuotetiedot</button>
-							<div class="panel large-panel product-description">
+							<div class="panel large-panel product-description"> <!-- extendable panel -->
 						  		<p>Myprotein Impact Whey Isolate on heraproteiini-isolaatti. Heraproteiini-isolaatti soveltuu tavallisen heraproteiinin tavoin kaikille liikkuville ihmisille. Proteiini on yksi t&auml;rkeimmist&auml; ravintoaineista, kun tavoitteena on painonpudotus, dieetti, lihasmassan yll&auml;pit&auml;minen tai sen lis&auml;&auml;minen.</p>
 						  		<p>Proteiinijauheet ovat mit&auml; helpoin tapa nauttia riitt&auml;v&auml; m&auml;&auml;r&auml; proteiinia. Voit sekoittaa hyv&auml;n makuiset jauheet halutessasi veteen, mehuun, maitoon tai vaikkapa jugurttiin. Proteiinijauheita k&auml;ytet&auml;&auml;n paljon my&ouml;s leivonnassa ja raakaleivonnassa! Ne kest&auml;v&auml;t kuumennusta ja tuovat my&ouml;s hyv&auml;n ja nopean sek&auml; ennen kaikkea terveellisen vaihtoehdon my&ouml;s ruoanlaittoon ja leivontaan.</p>
 						  		<p>Nauti monta ateriaa p&auml;iv&auml;ss&auml;, jotka sis&auml;lt&auml;v&auml;t sek&auml; proteiini, hiilihydraattia, ett&auml; hyvi&auml; rasvoja. Mik&auml;li l&auml;mpim&auml;n ruoan tai ev&auml;iden valmistaminen p&auml;iv&auml;n aikana ei ole mahdollista, on proteiinijuoma tai –patukka todella k&auml;tev&auml; tapa pysy&auml; kiinni ruokaohjelmassa!</p>
@@ -175,15 +231,18 @@
 						  		<p>Huomaa, ett&auml; t&auml;m&auml;n tuotteen etiketit on saatavilla ainakin englanniksi. Ranskan&#45;, italian&#45;, saksan&#45;, espanjan&#45;, tanskan&#45;, ruotsin&#45; ja suomenkieliset etiketit ovat my&ouml;s saatavilla tuotteesta riippuen.</p>
 							</div>
 
+						<!--           	   	     -->
+						<!-- READ MORE SECTION   -->
+						<!--  	  		         -->
 						<button class="column small- large-12 accordion">Lue lis&auml;</button>
-							<div class="panel large-panel product-info">
+							<div class="panel large-panel product-info"><!-- extendable panel -->
 								<div class="details">
 								<h4>Tuotemerkki:</h4>
 								<ul>
 									<li>Myprotein</li>
 								</ul>
 								</div>
-
+								<!-- INGREDIANTS SECTION -->
 								<div class="ingredients">
 									<h4>Ingredients:</h4>
 
@@ -203,7 +262,7 @@
 										<li>Impact Whey Isolate -proteiinifaktiot ovat seuraavanlaiset: beeta-laktoglobuliini 47 %, alfa-laktalbumiini 17 %, naudan seerumialbumiini 1,5 %, immunoglobuliini G 2 %, laktoferriini 0.5 %, glykomakropeptidi 27 %.</li>
 									</ul>
 								</div>
-
+								<!-- KEY BENEFITS SECTION -->
 								<div class="benefits">
 									<h4>Key Benefits</h4>
 									<ul>
@@ -217,7 +276,7 @@
 										<li>Edist&auml;&auml; luuston pysymist&auml; normaalina</li>
 									</ul>
 								</div>
-
+								<!-- SUGGESTED USE SECTION -->
 								<div class="suggestedUse">
 									<h4>Suggested Use:</h4>
 									<ul>
@@ -225,8 +284,9 @@
 									</ul>
 								</div>
 
+								
 								<div class="nutritionalInfo">
-									<h4>Nutritional Info:</h4>
+									<h4>Nutritional Info:</h4><!-- NUTRITIONAL INFORMATION TABLE -->
 									<table border="1">
 										<tbody>
 											<tr>
@@ -277,17 +337,22 @@
 									</ul>
 								</div>
 							</div>
-
+						<!--         -->
+						<!-- REVIEWS -->
+						<!--  	  	 -->
 						<button class="column small- large-12 accordion">
 							50 Arviot
+							<!-- 5 STAR SYSTEM -->
 							<span class="rating-full">
 								<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
 							</span>
 						</button>						
-						<div class="panel large-panel">
-							<button class="column small- large-12">Kirjoita Arvostelu</button>
+						<div class="panel large-panel"><!-- extendable panel -->
+							<button class="column small- large-12">Kirjoita Arvostelu</button> <!-- add a review -->
 						</div>
-
+						<!--           	   	     -->
+						<!-- SHIPPING & RETURNS  -->
+						<!--  	  		         -->
 						<button class="column small- large-12 accordion">Toimitukset &amp; Palautukset</button>
 						<div class="panel large-panel">
 							<h4>Mik&auml; on toimituksen kesto?</h4>
@@ -300,39 +365,48 @@
 							<p>Suosittelemme tarkistamaan mik&auml;li tilaus on j&auml;tetty naapurillesi tai l&auml;himpn postiin sill&auml; kokonsa vuoksi tilausta ei ole v&auml;ltt&auml;m&auml;tt&auml; mahdollista j&auml;tt postilaatikkoon.</p>
 							<h4>Mit&auml; voin tehd&auml; mik&auml;li en ole t&auml;ysin tyytyv&auml;inen tilaukseen?</h4>
 							<p><a href="https://m.mass.fi/returns-policy.info">Tarkista tuottoa ehdoin.</a></p>
-						</div>
+						</div><!-- extendable panel -->
 					</div>
 				</div>
 			</section>
 			<section class="column small-12 large-12 info">
-				<div class="in">
-					<div class="within recommended">
+				<div class="in"> <!-- Holds piece of content -->
+					<div class="within recommended"> <!-- holds margin, padding, border -->
+						<!--           	   	       -->
+						<!-- Recommeded Products  -->
+						<!--  	  		           -->
 						<h3>Suositellut Tuotteet</h3>
 						<section class="column small-6 large-4 rec">
+							<!-- Recommeded Product  -->
 							<img src="images/rec1.jpg" alt="Ios: Pro 97 Bag">
 							<p><span class="rating-full">
-								<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></span>
+								<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></span> <!-- rating system -->
 							</span></p>
 							<p><strong>Myprotein Iso:Pro 97<br>Isolaati</strong></p>
 							<p class="recPrice">27,59 €</p>
+							<!-- go to product -->
 							<input class="column small-12 large-12 osta1" type="submit" name="submit" value="OSTA">
 						</section>
-						<section class="column small-6 large-4 rec">
+						<section class="column small-6 large-4 rec">							
+							<!-- Recommeded Product  -->
 							<img src="images/rec3.jpg" alt="Ios: Pro 97 Bag">
 							<p><span class="rating-full">
-								<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></span>
+								<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></span> <!-- rating system -->
 							</span></p>
 							<p><strong>Myprotein Impact Whey<br>Protein</strong></p>
 							<p class="recPrice">13,59 €</p>
+							<!-- go to product -->
 							<input class="column small-12 large-12 osta3" type="submit" name="submit" value="OSTA">	
 						</section>
 						<section class="column small-hidden large-4 rec">
+							<!-- Recommeded Product  -->
 							<img src="images/rec2.jpg" alt="Ios: Pro 97 Bag">
 							<p><span class="rating-full">
-								<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></span>
+								<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></span> <!-- rating system -->
 							</span></p>
 							<p><strong>Myprotein Impact Native Whey 95 heraproteiini</strong></p>
 							<p class="recPrice">59,99 €</p>
+							<!-- go to product -->
 							<input class="column small-hidden large-12 osta2" type="submit" name="submit" value="OSTA">
 						</section>
 					</div>
@@ -340,12 +414,15 @@
 			</section>
 		</article>
 	</main>
+	<!--         -->
+	<!-- FOOTER  -->
+	<!--  	  	 -->
 	<footer class="row">
 		<div class="column small- large-12 info">
-			<section class="in-footer">
+			<section class="in-footer"> <!-- holds margin border content -->
 				<p><strong>2017 &copy; Sean Kirk</strong></p>
-				<p><a href="http://seankirk.co.uk/">My Portfolio</a></p>
-				<p><a href="http://lookprettygood.seankirk.co.uk/">Look Pretty Good</a></p>
+				<p><a href="http://seankirk.co.uk/">My Portfolio</a></p> <!-- portfolio link -->
+				<p><a href="http://lookprettygood.seankirk.co.uk/">Look Pretty Good</a></p> <!-- look fantasic link -->
 			</section>
 		</div>
 	</footer>

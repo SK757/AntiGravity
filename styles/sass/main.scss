@@ -1,34 +1,56 @@
-$color-background: #F8F8F8;
-$color-main: #B91A1F;
-$color-active: #FFF;
-$color-link: #FFF;
+$color-background: #F8F8F8; // DEFAULT BACKGROUND
+$color-main: #B91A1F; // OVERLAY COLOR
+$color-active: #FFF; // DEFAULT ACTIVE LINK COLOUR
+$color-link: #FFF; // DEFAULT LINK COLOUR
 
-$main-red: #d12b32;
-$light-red: #e64148;
+$main-red: #d12b32; // MAIN RED FOR BUTTONS
+$light-red: #e64148; // LIGHTER RED FOR CONTRAST ISSUES
 
-
+/*
+ * sets html font 
+ * and text alignment
+ */
 html {
 	font-family: Arial, Helvetica, sans-serif;
 	text-align: center;
 }
 
+/*
+ * defines the row class
+ * and makes content full screen
+ */
 .row {
 	width: 100%;
 	margin: 0 auto;
 }
 
+/*
+ * defines what happens 
+ * after the row class
+ * with no floating elements
+ */
 .row:after {
 	content: '';
 	display: table;
 	clear: both;
 }
 
+/*
+ * defines the column class
+ * and makes content float left
+ * width and height includes
+ * content padding and border
+ */
 .column {
 	float: left;
 	box-sizing: border-box;
 }
 
-
+/*
+ * defines the body tag
+ * adds padding to the bottom
+ * and default background
+ */
 body {
 	margin: 0;
 	background: $color-background;
@@ -37,7 +59,11 @@ body {
 
 
 /************** Header **************/
-
+/*
+ * defines the header tag
+ * gives background color, margin,
+ * padding with red font that stretches accross the screen
+ */
 header {
 	background-color: #1b1b1b;
 	margin-bottom: 1em !important;
@@ -54,13 +80,21 @@ h1 {
 
 /************** Navigation **************/
 
+/*
+ * Fixes nave to the botto of the page
+ * and aligns it in-front of other content
+ */
 nav {
 	position: fixed;
 	bottom: 0;
 	z-index: 100;
     overflow: hidden;
 }
-
+/*
+ * defines the button tag in the nav
+ * to display in a sinlge line, their background
+ * ,padding font colour margin and border
+ */
 nav button {
     float: left;
     display: inline-block;
@@ -81,15 +115,21 @@ nav button {
 	border-radius: 0;
 
 }
-
+/*
+ * disables blue focus around buttons
+ */
 button:focus {
 	outline: 0;
 }
-
+/*
+ * bacground color of button when active
+ */
 .navActive {
 	background-color: #B91A1F;
 }
-
+/*
+ * no border on final button
+ */
 .end {
 	border: none;
 }
@@ -99,6 +139,14 @@ button:focus {
 // https://codepen.io/PaulVanO/pen/XJYGNQ
 // Paul van Oijen
 
+/*
+ * container spans the height and
+ * width of the page and aligns text
+ * center and 40% from the top.
+ *
+ * Font size and link text
+ * is defined
+ */
 .container {
   position: absolute;
   width: 100%;
@@ -122,6 +170,11 @@ button:focus {
     overflow: hidden;
     top: 5px;
     
+	/*
+	 * defines what happens 
+	 * after button has been clicked
+	 * and how container transitions into display
+	 */
     &:after {
       content: '';
       position: absolute;
@@ -133,6 +186,7 @@ button:focus {
       bottom: 0;
       transition: .35s ease;
     }
+
     &:hover:after,
     &:focus:after,
     &:active:after {
@@ -141,56 +195,12 @@ button:focus {
   }
 }
 
-// .button-container {
-//   position: fixed;
-//   top: 5%;
-//   right: 2%;
-//   height: 27px;
-//   width: 35px;
-//   cursor: pointer;
-//   z-index: 101;
-//   transition: opacity .25s ease;
-    
-//   &.active {
-//     .top {
-//       transform: translateY(11px) translateX(0) rotate(45deg);
-//       background: $color-active;
-//       display: block !important;
-//     }
-//     .middle {
-//       opacity: 0;
-//       background: $color-active;
-//       display: block !important;
-//     }
-    
-//     .bottom {
-//       transform: translateY(-11px) translateX(0) rotate(-45deg);
-//       background: $color-active;
-//       display: block !important;
-//     }
-//   }
-
-//   span {
-//   background: $color-main;
-//   border: none;
-//   height: 5px;
-//   width: 100%;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   transition:  all .35s ease;
-//   cursor: pointer;
-    
-//     &:nth-of-type(2) {
-//       top: 11px;
-//     }
-    
-//     &:nth-of-type(3) {
-//       top: 22px;
-//     }
-//   }
-// }
-
+/*
+ * Overlay initially hidden
+ * background set and z-index set
+ * to be under navigation bar
+ * transition speed also set
+ */
 .overlay {
   position: fixed;
   background: $color-main;
@@ -204,6 +214,10 @@ button:focus {
   overflow: hidden;
   z-index: 99;
   
+ /*
+  * Once open, height and opacity set  
+  * made vissible and text animation set
+  */
   &.open {
     opacity: .9;
     visibility: visible;
@@ -213,6 +227,7 @@ button:focus {
       animation: fadeInRight .35s ease forwards;
     }
   }
+
   section {
     position: relative;
     height: 50%;
@@ -265,6 +280,10 @@ button:focus {
     }
   }
 }
+/*
+ * text fades in from right
+ * (for safari)
+ */
 @-webkit-keyframes fadeInRight {
   0% {
     opacity: 0;
@@ -275,6 +294,9 @@ button:focus {
     left: 0;
   }
 }
+/*
+ * text fades in from right
+ */
 @keyframes fadeInRight {
   0% {
     opacity: 0;
@@ -286,6 +308,11 @@ button:focus {
   }
 }
 
+/*
+ * Main content and footer
+ * maximum width set at 900px
+ * and centered
+ */
 main, footer {
 	max-width: 900px;
 	width: 100%;
@@ -294,17 +321,27 @@ main, footer {
 
 /******** Product Image ********/
 
+/*
+ * containers margin is set
+ */
 .img-container {
 	margin-bottom: .5em;
 }
 
+/*
+ * div receives a border, margin
+ * and background colour
+ */
 .img-single {
 	margin: 0 1em;
 	overflow: hidden;
 	border: 1px solid #dcdcdc;
 	background-color: #fff;
 }
-
+/*
+ * div containing image gets padding
+ * and any overflow hidden
+ */
 .img-product {
 	padding: 1em;
 	overflow: hidden;
@@ -312,12 +349,19 @@ main, footer {
 	text-align: center;
 }
 
+/*
+ * margin font and font weight
+ * is set for product name
+ */
 .img-product h3 {
 	margin: 0 0 .2em;
 	font-weight: 100;
 	font-family: 'Doppio One';
 }
-
+/*
+ * defines how the image acts
+ * including the height width and margin
+ */
 img {
 	max-width: 100%;
 	margin-left: auto;
@@ -325,7 +369,10 @@ img {
 	min-width: 45px;
 	overflow: hidden; 
 }
-
+/*
+ * defines image modal button
+ * removes border and adds corrent cursor and color
+ */
 .img-product button {
 	border: none;
 	background-color: #fff;
@@ -334,6 +381,9 @@ img {
 	font-size: 15px;
 }
 
+/*
+ * Button is positioned under the product image
+ */
 .img-product button span {
 	padding-right: .5em
 }
@@ -368,7 +418,11 @@ img {
     width: 40%; /* Could be more or less, depending on screen size */
 }
 
-/* Add Animation */
+
+/*
+ * Modal fades in
+ * (for safari)
+ */
 @-webkit-keyframes animatetop {
     0% {
     	opacity: 0
@@ -377,7 +431,9 @@ img {
     	opacity: 1
     }
 }
-
+/*
+ * Modal fades in
+ */
 @keyframes animatetop {
     0% {
     	opacity: 0
@@ -387,7 +443,7 @@ img {
     }
 }
 
-/* The Close Button */
+/* The Modal Close Button */
 .close {
     color: $main-red;
     float: right;
@@ -395,6 +451,7 @@ img {
     font-weight: bold;
 }
 
+/* The Modal Close button on hover and focus */
 .close:hover,
 .close:focus {
     color: #e24d53;
@@ -404,23 +461,36 @@ img {
 
 /******** Article ********/
 
-
+/*
+ * containers margin is set
+ */
 .info {
 	margin-bottom: .5em;
 }
-
+/*
+ * div receives a border, margin
+ * and removes overflow
+ */
 .in, .in-footer {
 	margin: 0 1em;
 	overflow: hidden;
 	border: 1px solid #dcdcdc;
 }
 
+/*
+ * div containing the content gets padding
+ * and background color and any overflow hidden
+ */
 .within {
 	padding: 1em;
 	overflow: hidden;
 	background-color: #fff;
 }
 
+/*
+ * price container text
+ * given margin to separate
+ */
 .price h3, .price p, .price span{
 	margin: .3em 0;
 }
@@ -433,6 +503,10 @@ https://css-tricks.com/star-ratings/
 Chris Coyier
 */
 
+/*
+ * rating stars direction set right to left
+ * z-index set to 1 to be placed beneath the overlay
+ */
 .rating, .rating-full {
 	unicode-bidi: bidi-override;
   	direction: rtl;
@@ -441,6 +515,10 @@ Chris Coyier
 .rating-full {
 	padding-left: .7em;
 }
+
+/*
+ * Direct decendant are coloured and positioned inline
+ */
 .rating > span, .rating-full > span {
   	display: inline-block;
   	position: relative;
@@ -459,16 +537,28 @@ Chris Coyier
 
 
 /******** Form ********/
-
+/*
+ * defines the select lables for product
+ * customisation including padding and 
+ * text alignment for desktop
+ */
 label {
 	padding: 1em;
 	text-align: left;
 }
-
+/*
+ * required stars are coloured the default red
+ */
 label span {
 	color: $main-red;
 }
-
+// http://jsfiddle.net/gs2q1c7p/
+/*
+ * defines the select box 
+ * by resetting its appearance 
+ * and adding a drop down image as the background
+ * sets border margin padding and font size
+ */
 select {
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -487,6 +577,11 @@ select {
 	padding: 1em .4em 1em;
 }
 
+/*
+ * defines the submit input 
+ * by setting border and border radius (cross browser) 
+ * sets padding width font and text shadow
+ */
 input[type=submit] {
 	border: none;
 	-webkit-border-radius: 2px;
@@ -515,14 +610,19 @@ form button, .panel button {
 .panel button {
 	margin: .7em 0;
 }
-
+/*
+ * disables blue focus around input
+ * and select boxes and buttons
+ */
 select:focus, input:focus {
 	outline: 0;
 }
 
 
 /******** Accordion ********/
-
+/*
+ * Holds the accordion by hiding and overflow
+ */
 .within-accordion {
 	overflow: hidden;
 	background-color: #fff;
@@ -575,18 +675,28 @@ button.accordion.active:after {
 
 
 /******** Table ********/
-
+/*
+ * Ingrediants table collapeses it borders
+ * and reduces margin
+ */
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 	margin: 0 1.5em 1em;
 }
 
+/*
+ * Headings resised within the the accordion
+ */
 .product-info h4, th, .product-description h4 {
 	margin-bottom: .5em;
 	font-size: 13px;
 }
 
+/*
+ * removes bullet point from list
+ * and adds padding
+ */
 .product-info ul {
 	list-style-type: none;
 	margin: 0 0 1.5em;
@@ -595,7 +705,10 @@ table {
 
 
 /******** Accordion Contents ********/
-
+/*
+ * links in accordion are undecoratioed
+ * and coloured black
+ */
 .panel a {
 	text-decoration: none;
 	color: #000
@@ -603,7 +716,10 @@ table {
 
 
 /******** Recommended Producs ********/
-
+/*
+ * resizes padding and margins of
+ * recommended products section
+ */
 .recommended .rec {
 	padding: 0 .5em;
 }
@@ -627,6 +743,10 @@ p.recPrice{
 
 /******** Footer ********/
 
+/*
+ * Footer content placed in border
+ * with padding and recoloured
+ */
 .in-footer {
 	background-color: #fff;
 	color: #000;
@@ -647,7 +767,10 @@ p.recPrice{
 [class*="small-"] {
 	width: 100%;
 }
-
+/* 
+ * Used in viewports from 0px
+ * mobile
+ */
 @media only screen and (min-width: 0px) {
 	.small-1 {
 		width: 8.333%;
@@ -699,7 +822,10 @@ p.recPrice{
 	}
 }
 
-//was 900px with medium
+/* 
+ * Used in viewports from 738px
+ * (desktop)
+ */
 @media only screen and (min-width: 738px) {
 	.large-1 {
 		width: 8.333%;
@@ -756,26 +882,47 @@ p.recPrice{
 	.large-hidden {
 		display: none;
 	}
+	/* 
+ 	* accordion button font resized for desktop 
+ 	*/
 	button.accordion, button.accordion:after, button.accordion.active:after  {
     	font-size: .9rem;
 	}
+	/* 
+ 	* div resized for desktop 
+ 	*/
 	.img-container {
 		height: 370px;
 	}
+	/* 
+ 	* div resized for desktop 
+ 	*/
 	.img-single {
 		height: 100%;
 		margin-right: 0;
 		border-right: 0;
 	}
+	/* 
+ 	* div resized for desktop 
+ 	*/
 	.img-product {
 		height: 90.6%;
 	}
+	/* 
+ 	* div resized for desktop 
+ 	*/
 	.img-product img {
 		padding-top: 30px;
 	}
+	/* 
+ 	* div resized for desktop 
+ 	*/
 	.info-form {
 		height: 370px;
 	}
+	/* 
+ 	* div resized for desktop 
+ 	*/
 	.in-info {
 		margin-left: 0;
 		height: 100%;
@@ -783,11 +930,13 @@ p.recPrice{
 		border-left: 0;
 		background-color: #fff;
 	}
-	.within-info {
-	}
+	/* 
+ 	* Padding reduced to remove space at bottom of page for desktop 
+ 	*/
 	body {
 		padding-bottom: 0;
 	}
+	/* Navigation removed for desktop */
 	nav {
 		display: none;
 	}
