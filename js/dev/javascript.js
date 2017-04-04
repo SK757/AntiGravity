@@ -68,10 +68,13 @@ window.onclick = function(event) {
 
 var changePrice = function()
 {
+  // gets the class for the quantity selecct and product price
     var weightSelect = $(".weight-select"),
     	quantitySelect = $(".quantity-select"),
         displayPrice = $(".product-price");
 
+  // changes the product-price class by getting the value of the selected option
+  // and replacing the current product-price
     quantitySelect.change(function(){
         var selected = $(this).children("option:selected").val();
         displayPrice.text(selected);
